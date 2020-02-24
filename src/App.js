@@ -23,11 +23,16 @@ class App extends Component {
      
     ]
   }
+
+
+  markComplete = (id) =>{
+    
+  }
 render() {
   return (
     <div className="App">
       <header className="App-header">
-      <Todos todos={this.state.todos}/>
+      <Todos todos={this.state.todos} markComplete={this.markComplete}/>
       </header>
     </div>
   );
