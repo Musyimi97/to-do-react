@@ -18,21 +18,31 @@ class App extends Component {
       {
         id:3,
         title:'Meeting with boss',
-        completed:true
+        completed:false
       },
      
     ]
   }
-
+// Toggle Complete
 
   markComplete = (id) =>{
-    
+    this.setState({ todos: this.state.todos.map(todo => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed
+      }
+      return todo;
+    }) })
   }
+// Delete Todo
+delTodo = (id) =>{
+  console.log(id)
+}
+
 render() {
   return (
     <div className="App">
       <header className="App-header">
-      <Todos todos={this.state.todos} markComplete={this.markComplete}/>
+      <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/>
       </header>
     </div>
   );
